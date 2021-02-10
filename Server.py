@@ -1,4 +1,7 @@
 
+"""
+    This file contains code only for the Server class.
+"""
 class Server:
     def __init__(self):
         self._serverName = ""

@@ -1,11 +1,6 @@
 
 """
-Total number of seat
-Current number of guest
-Is this table available?
-Who is serving this table
-
-
+    This file contains only code for Table Class.
 """
 
 class Table:
