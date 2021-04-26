@@ -43,10 +43,13 @@ class Serve_Guest_Menu:
         userInput = input(menuMessage)
         number_of_guest = int(userInput)
 
-        newOrder = Order(table_id, server_id)
+        newOrder = Order(table_id, server_id, number_of_guest)
 
-        self._restaurant_object.seat_guests(newOrder, number_of_guest)
-        print("New object created")
+        try:
+            self._restaurant_object.seat_guests(newOrder)
+        except Exception as error_msg:
+            print(error_msg)
+
 
 
 

@@ -1,0 +1,13 @@
+[{"_item_id": 1, "_item_name": "House Special", "_category": "Pizza", "_item_price": 19.99},
+  {"_item_id": 2, "_item_name": "Thai Dye", "_category": "Pizza", "_item_price": 14.99},
+  {"_item_id": 3, "_item_name": "Holy Shitake", "_category": "Pizza", "_item_price": 21.00},
+  {"_item_id": 4, "_item_name": "House Salad", "_category": "Salad", "_item_price": 7.99},
+  {"_item_id": 5, "_item_name": "Greek Salad", "_category": "Salad", "_item_price": 7.99},
+  {"_item_id": 6, "_item_name": "Ceasar Salad", "_category": "Salad", "_item_price": 9.99},
+  {"_item_id": 7, "_item_name": "Cheese Burger", "_category": "Burger", "_item_price": 8.99},
+  {"_item_id": 8, "_item_name": "Bacon Burger", "_category": "Burger", "_item_price": 9.99},
+  {"_item_id": 9, "_item_name": "My Happy Burger", "_category": "Burger", "_item_price": 12.99},
+  {"_item_id": 10, "_item_name": "Soft Drink", "_category": "Drink", "_item_price": 2.99},
+  {"_item_id": 11, "_item_name": "Domestic Beer", "_category": "Drink", "_item_price": 1.99},
+  {"_item_id": 12, "_item_name": "European Beer", "_category": "Drink", "_item_price": 2.99}
+]
