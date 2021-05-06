@@ -59,7 +59,12 @@ def load_server_configuration():
 # The goal for this function is to save order data.  It will append to the given file by day
 def save_order_information(order):
     # Get today date to create file format
-    file_name = "order_" + get_today_date() + ".json"
-    output_file = open("storage/tables.json", "a")
-    json.dump(order.__dict__, output_file)
+    file_name = "storage/order_" + get_today_date() + ".json"
+    output_file = open(file_name, "a")
+    json.dump(order, output_file)
+    output_file.write("\n")
     output_file.close()
+
+def print_tip_data(server_data_list):
+    for single_server in server_data_list:
+        print( "%s\t%.2f\n" % (single_server["Name"], single_server["Tip"]))

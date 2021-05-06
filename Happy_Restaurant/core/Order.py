@@ -28,15 +28,15 @@ class Order:
     def get_number_of_guests(self):
         return self._number_of_guest
 
-    def add_guest_order(self, guestNumber, order):
+    def add_guest_order(self, guestNumber, food):
         orderList = self._guest_orders.get(guestNumber)
 
         #Guest has not ordered anything
         if (orderList == None):
-            orderList = [order]
+            orderList = [food]
             self._guest_orders[guestNumber] = orderList
         else:
-            orderList.append(order)
+            orderList.append(food)
 
     #Calculate sub-total for the order
     def calculate_subtotal(self):
@@ -44,6 +44,13 @@ class Order:
         for key in self._guest_orders.keys() :
             for singleItem in self._guest_orders.get(key):
                 subtotal += singleItem.get_item_price()
+        return subtotal
+
+    #Calculate sub-total by guest
+    def calculate_subtotal_by_guest(self, guest_number):
+        subtotal = 0.0
+        for singleItem in self._guest_orders.get(guest_number):
+            subtotal += singleItem.get_item_price()
         return subtotal
 
     # Calculate service fee for the order
@@ -56,5 +63,20 @@ class Order:
 
     # Calculate Total
     def calculate_total(self):
-        return self.calculate_subtotal() + self.calculate_service_fee() + self.calculate_tax()
+        return self.calculate_subtotal() \
+               + self.calculate_service_fee() \
+               + self.calculate_tax()
 
+    # Calculate service fee for the order
+    def calculate_service_fee_by_guest(self, guest_number):
+        return self.calculate_subtotal_by_guest(guest_number) * self._service_fee
+
+    # Calculate tax
+    def calculate_tax_by_guest(self, guest_number):
+        return self.calculate_subtotal_by_guest(guest_number) * self._tax
+
+    # Calculate Total
+    def calculate_total_by_guest(self, guest_number):
+        return self.calculate_subtotal_by_guest(guest_number) \
+               + self.calculate_service_fee_by_guest(guest_number) \
+               + self.calculate_tax_by_guest(guest_number)

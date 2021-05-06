@@ -16,6 +16,7 @@ def start_input(template):
 
     user_input = 0
     while True:
+        print("\n\n")
         user_input = input(menu_message)
         try:
             user_input = int(user_input)
@@ -46,6 +47,8 @@ userMenu = Table_Creation_Menu(restaurant)
 serve_guest_menu = Serve_Guest_Menu(restaurant)
 
 admin_menu = AdminMenu(restaurant)
+#Load data when the system loads
+admin_menu.load_configurations()
 
 # Create Main Menu
 main_menu = """1. Table Creation Menu

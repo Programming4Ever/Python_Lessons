@@ -14,8 +14,12 @@ class AdminMenu:
                 "function": self.print_table_status
             },
             {
+                "option": "Table and Orders",
+                "function": self.print_tables_and_orders
+            },
+            {
                 "option": "Print Tips",
-                "function": None
+                "function": self.print_server_tips
             },
             {
                 "option": "Print Menu",
@@ -28,12 +32,20 @@ class AdminMenu:
             {
                 "option": "Save Configurations",
                 "function": self.save_configurations
+            },
+            {
+                "option": "Go Back",
+                "function": None
             }
         ]
 
     # This function print table statuses
     def print_table_status(self):
         table_status(self._restaurant_object.get_table_as_list())
+
+    #This function prints all table and their orders.  Only tables with orders will be shown
+    def print_tables_and_orders(self):
+        print_table_and_orders(self._restaurant_object.get_all_current_orders())
 
     # This function print table statuses
     def print_menu_items(self):
@@ -42,6 +54,10 @@ class AdminMenu:
     # This function save configurations
     def save_configurations(self):
         save_table_configuration(self._restaurant_object.get_table_as_list())
+
+    # Print Tips
+    def print_server_tips(self):
+        print_tip_data(self._restaurant_object.get_server_tips_info())
 
     # This function load configuration
     def load_configurations(self):
