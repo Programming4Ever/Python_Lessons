@@ -11,6 +11,9 @@ VALUES (3, 'Burger');
 INSERT INTO Food_Category(category_id, category_value)
 VALUES (4, 'Drink');
 
+INSERT INTO Food_Category(category_id, category_value)
+VALUES (5, 'Unknown');
+
 -- Create Food Data
 
 INSERT INTO Food(id, name, category_id, price)
